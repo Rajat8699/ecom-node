@@ -1,9 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
-const { getUserMiddleware } = require("../middlewares/userMiddleware");
-const { getUserController } = require("../controllers/userController");
+const { addUserMiddleware, findUserMiddleware } = require("../middlewares/userMiddleware");
+const { addUserController, findUserController } = require("../controllers/userController");
 
-router.get("/getUser", getUserMiddleware, getUserController);
+router.post("/addUser", addUserMiddleware, addUserController);
+router.get("/findUser", findUserMiddleware, findUserController);
 
 module.exports = router;

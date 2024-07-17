@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const port = 3000
 
+app.use(express.json());
 require("./src/middlewares")(app);
 require("./src/routes")(app);
 const sequelize = require('./config/db');
